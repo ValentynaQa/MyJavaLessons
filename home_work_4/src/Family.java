@@ -33,6 +33,10 @@ public class Family {
         this.pet = pet;
     }
 
+    public String toString (Human mother, Human father, Human[][] children, Pet pet) {
+        return "{" + mother + father + children + pet + "}";
+    }
+
     /* Конструктор */
     public Family (Human mother, Human father) {
         this.mother = mother;
