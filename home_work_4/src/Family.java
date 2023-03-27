@@ -39,6 +39,7 @@ public class Family {
         this.pet = pet;
     }
 
+
     @Override
     public String toString () {
         return "{" + mother + father + children + pet + "}";
@@ -62,6 +63,10 @@ public class Family {
         this.children = children;
         this.pet = pet;
     }
+
     public Family(){
     }
+
+    /* Методи */
+
 }

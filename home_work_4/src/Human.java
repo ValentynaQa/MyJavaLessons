@@ -5,14 +5,13 @@ public class Human extends Pet {
     private int year;
     private int iq;
     private Pet pet;
-    private Human mother;
-    private Human father;
     private String [][] schedule;
+    private Family family;
 
     /*Переопределите метод toString()*/
     @Override
     public String toString() {
-        return "Human " + "{" + name + '\'' + surname + '\'' + year + iq + mother + father + pet.getSpecies() + "{" + pet.getNickname() + '\'' + pet.getAge() + pet.getTrickLevel() + pet.getHabits() + "}}";
+        return "Human " + "{" + name + '\'' + surname + '\'' + year + iq + schedule + schedule + "}";
     }
 
     private void greetPet () {
@@ -23,6 +22,10 @@ public class Human extends Pet {
         System.out.println("У мене є " + pet.getSpecies() + "йому " + pet.getAge() + " років" +"він " + pet.getHabits());
     }
 
+    private void eatPet () {
+        System.out.println(pet.getNickname() + ", іди їсти!");
+    }
+
     /* конструктори*/
     public Human (String name, String surname, int year){
         this.name = name;
@@ -30,21 +33,18 @@ public class Human extends Pet {
         this.year = year;
     }
 
-    public Human (String name, String surname, int year, Human mother, Human father){
+    public Human (String name, String surname, int year, String [][] schedule){
         this.name = name;
         this.surname = surname;
         this.year = year;
-        this.mother = mother;
-        this.father = father;
-    }
-
-    public Human (String name, String surname, int year, Human mother, Human father, String [][] schedule){
-        this.name = name;
-        this.surname = surname;
-        this.year = year;
-        this.mother = mother;
-        this.father = father;
         this.schedule = schedule;
+    }
+    public Human (String name, String surname, int year, String [][] schedule, Family family){
+        this.name = name;
+        this.surname = surname;
+        this.year = year;
+        this.schedule = schedule;
+        this.family = family;
     }
 
     public Human() {
@@ -71,16 +71,12 @@ public class Human extends Pet {
         return pet;
     }
 
-    public Human getMother() {
-        return mother;
-    }
-
-    public Human getFather() {
-        return father;
-    }
-
     public String[][] getSchedule() {
         return schedule;
+    }
+
+    public Family getFamily() {
+        return family;
     }
 
     /* Сеттери */
@@ -104,12 +100,8 @@ public class Human extends Pet {
         this.pet = pet;
     }
 
-    public void setMother(Human mother) {
-        this.mother = mother;
-    }
-
-    public void setFather(Human father) {
-        this.father = father;
+    public void setFamily(Family family) {
+        this.family = family;
     }
 
     public void setSchedule(String[][] schedule) {
