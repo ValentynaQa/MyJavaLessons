@@ -8,12 +8,15 @@ public class Family {
     public Human getMother() {
         return mother;
     }
+
     public Human getFather(){
         return father;
     }
+
     public Human[] getChildren() {
         return children;
     }
+
     public Pet getPet() {
         return pet;
     }
@@ -23,17 +26,21 @@ public class Family {
     public void setMother(Human mother) {
         this.mother = mother;
     }
+
     public void setFather(Human father) {
         this.father = father;
     }
+
     public void setChildren(Human[] children) {
         this.children = children;
     }
+
     public void setPet(Pet pet) {
         this.pet = pet;
     }
 
-    public String toString (Human mother, Human father, Human[][] children, Pet pet) {
+    @Override
+    public String toString () {
         return "{" + mother + father + children + pet + "}";
     }
 
@@ -42,11 +49,13 @@ public class Family {
         this.mother = mother;
         this.father = father;
     }
+
     public Family (Human mother, Human father, Human[] children) {
         this.mother = mother;
         this.father = father;
         this.children = children;
     }
+
     public Family (Human mother, Human father, Human[] children, Pet pet) {
         this.mother = mother;
         this.father = father;

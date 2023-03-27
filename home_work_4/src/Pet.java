@@ -7,7 +7,8 @@ public class Pet {
     private String[] habits;
 
     /*Переопределите метод toString()*/
-    public String toString(String species, String nickname,int age, int trickLevel, String[]habits) {
+    @Override
+    public String toString() {
         return species + "{" + nickname + '\'' + age + trickLevel + habits + "}";
     }
 
@@ -67,15 +68,19 @@ public class Pet {
     public void setSpecies(String species) {
         this.species = species;
     }
+
     public void setNickname(String nickname) {
         this.nickname = nickname;
     }
+
     public void setAge(int age) {
         this.age = age;
     }
+
     public void setTrickLevel(int trickLevel) {
         this.trickLevel = trickLevel;
     }
+
     public void setHabits(String[] habits) {
         this.habits = habits;
     }
