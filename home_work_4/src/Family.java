@@ -3,6 +3,7 @@ public class Family {
     private Human father;
     private Human[] children;
     private Pet pet;
+    private int ArraysChildren;
 
     /* геттери*/
     public Human getMother() {
@@ -41,8 +42,8 @@ public class Family {
 
 
     @Override
-    public String toString () {
-        return "{" + mother + father + children + pet + "}";
+    public String toString() {
+        return "Family{" + "mother=" + mother + ", father=" + father + ", children=" + ArraysChildren + '}';
     }
 
     /* Конструктор */
@@ -68,5 +69,44 @@ public class Family {
     }
 
     /* Методи */
+
+    public void addChild(Human child) {
+        Human[] newChildren = new Human[children.length + 1];
+        System.arraycopy(children, 0, newChildren, 0, children.length);
+        newChildren[newChildren.length - 1] = child;
+        child.setFamily(this);
+        children = newChildren;
+    }
+
+    public boolean deleteChild(int index) {
+        if (index < 0 || index >= children.length) {
+            return false;
+        }
+        Human[] newChildren = new Human[children.length - 1];
+        System.arraycopy(children, 0, newChildren, 0, index);
+        System.arraycopy(children, index + 1, newChildren, index, children.length - index - 1);
+        children = newChildren;
+        return true;
+    }
+
+    public int countFamily() {
+        return children.length + 2;
+    }
+
+
+
+
+    /*private void addChild (Human[] children) {
+        this.children = children;
+        } */
+
+    /* Методи */
+    /*@Override
+    private void addChildren (Human[] children) {
+        }
+    public static String deleteChild () {
+        return
+    }*/
+
 
 }
