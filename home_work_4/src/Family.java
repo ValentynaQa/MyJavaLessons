@@ -46,9 +46,10 @@ public class Family {
     @Override
     public String toString() {
         return "Family{" +
-                "mother=" + mother +
-                ", father=" + father +
-                ", children=" + ArraysChildren + '}';
+                mother +
+                ", " + father +
+                ", " + ArraysChildren
+                + '}';
     }
 
     /* Конструктор */

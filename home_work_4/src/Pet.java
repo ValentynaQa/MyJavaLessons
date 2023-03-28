@@ -17,7 +17,7 @@ public class Pet {
                 ", age" + age +
                 ", trickLevel=" + trickLevel +
                 ", habits=" + habits +
-                        '}';
+                '}';
     }
 
     /*методи класу Pet*/
