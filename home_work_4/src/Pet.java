@@ -11,10 +11,13 @@ public class Pet {
     /*Переопределите метод toString()*/
     @Override
     public String toString() {
-        return species + "{" +
-                nickname + '\'' +
-                age + trickLevel +
-                habits + "}";
+        return "Pet{" +
+                "species=" + species +
+                ", nickname=" + nickname +
+                ", age" + age +
+                ", trickLevel=" + trickLevel +
+                ", habits=" + habits +
+                        '}';
     }
 
     /*методи класу Pet*/

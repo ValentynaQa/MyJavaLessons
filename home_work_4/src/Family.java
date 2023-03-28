@@ -76,12 +76,40 @@ public class Family {
     /* Методи */
 
     public void addChild(Human child) {
-        Human[] newChildren = new Human[children.length + 1];
-        System.arraycopy(children, 0, newChildren, 0, children.length);
-        newChildren[newChildren.length - 1] = child;
-        child.setFamily(this); /* дала посилання */
-        children = newChildren;
+        if (children == null) {
+            children = new Human[1];
+            children[0] = child;
+        } else {
+            Human[] newChildren = new Human[children.length + 1];
+            System.arraycopy(children, 0, newChildren, 0, children.length);
+            newChildren[newChildren.length - 1] = child;
+            child.setFamily(this);
+            children = newChildren;
+        }
     }
+
+    public boolean deleteChild(Human child) {
+        int childIndex = -1;
+        for (int i = 0; i < children.length; i++) {
+            if (children[i].equals(child)) {
+                childIndex = i;
+                break;
+            }
+        }
+        if (childIndex == -1) {
+            return false;
+        }
+        Human[] newChildren = new Human[children.length - 1];
+        for (int i = 0, k = 0; i < children.length; i++) {
+            if (i != childIndex) {
+                newChildren[k++] = children[i];
+            }
+        }
+        children = newChildren;
+        child.setFamily(null);
+        return true;
+    }
+
     public int countFamily() {
         return children.length + 2;
     }
@@ -95,23 +123,6 @@ public class Family {
                 Objects.equals(father, family.father);
     }
 }
-
-
-
-
-
-
-    /*private void addChild (Human[] children) {
-        this.children = children;
-        } */
-
-    /* Методи */
-    /*@Override
-    private void addChildren (Human[] children) {
-        }
-    public static String deleteChild () {
-        return
-    }*/
 
 
 

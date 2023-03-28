@@ -12,31 +12,32 @@ public class Human extends Pet{
     @Override
     public String toString() {
         return "Human " + "{" +
-                name + '\'' +
-                surname + '\'' +
-                year +
-                iq +
-                schedule +
-                schedule + "}";
+                "name=" + name +
+                ", surname=" + surname +
+                ", year=" + year +
+                ", iq=" + iq +
+                ", String [][] schedule=" + schedule +
+                '}';
     }
 
-    private void greetPet () {
+    public void greetPet () {
         System.out.println("Привіт, " + pet.getNickname());
     }
 
-    private void describePet () {
+    public void describePet () {
         System.out.println("У мене є " + pet.getSpecies() + "йому " + pet.getAge() + " років" +"він " + pet.getHabits());
     }
 
-    private void eatPet () {
+    public void eatPet () {
         System.out.println(pet.getNickname() + ", іди їсти!");
     }
 
     /* конструктори*/
-    public Human (String name, String surname, int year, int i){
+    public Human (String name, String surname, int year, int iq){
         this.name = name;
         this.surname = surname;
         this.year = year;
+        this.iq = iq;
     }
 
     public Human (String name, String surname, int year, String [][] schedule){
@@ -45,6 +46,7 @@ public class Human extends Pet{
         this.year = year;
         this.schedule = schedule;
     }
+
     public Human (String name, String surname, int year, String [][] schedule, Family family){
         this.name = name;
         this.surname = surname;
