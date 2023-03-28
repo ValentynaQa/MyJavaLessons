@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Family {
     private Human mother;
     private Human father;
@@ -10,7 +12,7 @@ public class Family {
         return mother;
     }
 
-    public Human getFather(){
+    public Human getFather() {
         return father;
     }
 
@@ -43,29 +45,32 @@ public class Family {
 
     @Override
     public String toString() {
-        return "Family{" + "mother=" + mother + ", father=" + father + ", children=" + ArraysChildren + '}';
+        return "Family{" +
+                "mother=" + mother +
+                ", father=" + father +
+                ", children=" + ArraysChildren + '}';
     }
 
     /* Конструктор */
-    public Family (Human mother, Human father) {
+    public Family(Human mother, Human father) {
         this.mother = mother;
         this.father = father;
     }
 
-    public Family (Human mother, Human father, Human[] children) {
+    public Family(Human mother, Human father, Human[] children) {
         this.mother = mother;
         this.father = father;
         this.children = children;
     }
 
-    public Family (Human mother, Human father, Human[] children, Pet pet) {
+    public Family(Human mother, Human father, Human[] children, Pet pet) {
         this.mother = mother;
         this.father = father;
         this.children = children;
         this.pet = pet;
     }
 
-    public Family(){
+    public Family() {
     }
 
     /* Методи */
@@ -74,24 +79,24 @@ public class Family {
         Human[] newChildren = new Human[children.length + 1];
         System.arraycopy(children, 0, newChildren, 0, children.length);
         newChildren[newChildren.length - 1] = child;
-        child.setFamily(this);
+        child.setFamily(this); /* дала посилання */
         children = newChildren;
     }
-
-    public boolean deleteChild(int index) {
-        if (index < 0 || index >= children.length) {
-            return false;
-        }
-        Human[] newChildren = new Human[children.length - 1];
-        System.arraycopy(children, 0, newChildren, 0, index);
-        System.arraycopy(children, index + 1, newChildren, index, children.length - index - 1);
-        children = newChildren;
-        return true;
-    }
-
     public int countFamily() {
         return children.length + 2;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Family family = (Family) obj;
+        return Objects.equals(mother, family.mother) &&
+                Objects.equals(father, family.father);
+    }
+}
+
+
 
 
 
@@ -109,4 +114,4 @@ public class Family {
     }*/
 
 
-}
+

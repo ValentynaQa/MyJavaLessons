@@ -1,4 +1,4 @@
-public class Human extends Pet {
+public class Human extends Pet{
     /*Опис класу Human*/
     private String name;
     private String surname;
@@ -11,7 +11,13 @@ public class Human extends Pet {
     /*Переопределите метод toString()*/
     @Override
     public String toString() {
-        return "Human " + "{" + name + '\'' + surname + '\'' + year + iq + schedule + schedule + "}";
+        return "Human " + "{" +
+                name + '\'' +
+                surname + '\'' +
+                year +
+                iq +
+                schedule +
+                schedule + "}";
     }
 
     private void greetPet () {
@@ -27,7 +33,7 @@ public class Human extends Pet {
     }
 
     /* конструктори*/
-    public Human (String name, String surname, int year){
+    public Human (String name, String surname, int year, int i){
         this.name = name;
         this.surname = surname;
         this.year = year;
@@ -106,5 +112,19 @@ public class Human extends Pet {
 
     public void setSchedule(String[][] schedule) {
         this.schedule = schedule;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof Human)) {
+            return false;
+        }
+        Human human = (Human) obj;
+        return this.name.equals(human.getName()) &&
+                this.surname.equals(human.getSurname()) &&
+                this.iq == human.getIq();
     }
 }

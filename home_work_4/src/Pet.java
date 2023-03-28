@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Pet {
     /*Опис класу Pet*/
     private String species;
@@ -9,7 +11,10 @@ public class Pet {
     /*Переопределите метод toString()*/
     @Override
     public String toString() {
-        return species + "{" + nickname + '\'' + age + trickLevel + habits + "}";
+        return species + "{" +
+                nickname + '\'' +
+                age + trickLevel +
+                habits + "}";
     }
 
     /*методи класу Pet*/
@@ -83,5 +88,18 @@ public class Pet {
 
     public void setHabits(String[] habits) {
         this.habits = habits;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Pet pet = (Pet) obj;
+        return Objects.equals(species, pet.species) &&
+                Objects.equals(nickname, pet.nickname);
     }
 }
