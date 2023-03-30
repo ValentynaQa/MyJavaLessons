@@ -2,7 +2,7 @@ import java.util.Objects;
 
 public class Pet {
     /*Опис класу Pet*/
-    private String species;
+    private Speises species;
     private String nickname;
     private int age;
     private int trickLevel;
@@ -34,13 +34,13 @@ public class Pet {
     }
 
     /* конструктор і значення вкладаю в класHuman*/
-    public Pet(String species, String nickname) {
+    public Pet(Speises species, String nickname) {
         this.species = species;
         this.nickname = nickname;
     }
 
     /* конструктор "описывающий все поля животного"*/
-    public Pet(String species, String nickname, int age, int trickLevel, String[] habits) {
+    public Pet(Speises species, String nickname, int age, int trickLevel, String[] habits) {
         this.species = species;
         this.nickname = nickname;
         this.age = age;
@@ -53,7 +53,7 @@ public class Pet {
     }
 
     /* геттери*/
-    public String getSpecies() {
+    public Speises getSpecies() {
         return species;
     }
 
@@ -73,7 +73,7 @@ public class Pet {
     }
 
     /* Сеттери */
-    public void setSpecies(String species) {
+    public void setSpecies(Speises species) {
         this.species = species;
     }
 
