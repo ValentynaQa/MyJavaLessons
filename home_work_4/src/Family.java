@@ -123,6 +123,11 @@ public class Family {
         return Objects.equals(mother, family.mother) &&
                 Objects.equals(father, family.father);
     }
+
+    @Override
+    protected void finalize () {
+        System.out.println("УВАГА! Видалення об'єкту - " + this);
+    }
 }
 
 

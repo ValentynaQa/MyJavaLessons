@@ -12,11 +12,11 @@ public class Pet {
     @Override
     public String toString() {
         return "Pet{" +
-                "species=" + species +
-                ", nickname=" + nickname +
-                ", age" + age +
-                ", trickLevel=" + trickLevel +
-                ", habits=" + habits +
+                " species= " + species + " " +
+                ", nickname= " + nickname + " " +
+                ", age " + age + " " +
+                ", trickLevel= " + trickLevel +
+                ", habits= " + habits +
                 '}';
     }
 
@@ -104,5 +104,9 @@ public class Pet {
         Pet pet = (Pet) obj;
         return Objects.equals(species, pet.species) &&
                 Objects.equals(nickname, pet.nickname);
+    }
+    @Override
+    protected void finalize () {
+        System.out.println("УВАГА! Видалення об'єкту - " + this);
     }
 }

@@ -1,4 +1,4 @@
-public class Human extends Pet{
+public class Human {
     /*Опис класу Human*/
     private String name;
     private String surname;
@@ -9,15 +9,43 @@ public class Human extends Pet{
     private Family family;
 
     /*Переопределите метод toString()*/
-    @Override
+    /*@Override
     public String toString() {
         return "Human " + "{" +
                 "name=" + name +
                 ", surname=" + surname +
                 ", year=" + year +
                 ", iq=" + iq +
-                ", String [][] schedule=" + schedule +
-                '}';
+                ", String [][] schedule=" + schedule[0][0] + " " + schedule[1][0] + " "+
+                "}";
+    }*/
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Human{name='").append(name).append('\'');
+        sb.append(", surname='").append(surname).append('\'');
+        sb.append(", year=").append(year);
+        sb.append(", iq=").append(iq);
+        sb.append(", pet=").append(pet);
+        sb.append(", schedule=");
+        if (schedule == null) {
+            sb.append("null");
+        } else {
+            sb.append('[');
+            for (int i = 0; i < schedule.length; i++) {
+                sb.append('[');
+                for (int j = 0; j < schedule[i].length; j++) {
+                    sb.append(schedule[i][j]);
+                    if (j < schedule[i].length - 1) sb.append(", ");
+                }
+                sb.append(']');
+                if (i < schedule.length - 1) sb.append(", ");
+            }
+            sb.append(']');
+        }
+        sb.append(", family=").append(family);
+        sb.append('}');
+        return sb.toString();
     }
 
     public void greetPet () {
@@ -128,5 +156,10 @@ public class Human extends Pet{
         return this.name.equals(human.getName()) &&
                 this.surname.equals(human.getSurname()) &&
                 this.iq == human.getIq();
+    }
+
+    @Override
+    protected void finalize () {
+        System.out.println("УВАГА! Видалення об'єкту - " + this);
     }
 }
