@@ -130,6 +130,9 @@ public class Family {
     protected void finalize () {
         System.out.println("УВАГА! Видалення об'єкту - " + this);
     }
+
+    public static class DeleteChild_intIndex_Test {
+    }
 }
 
 

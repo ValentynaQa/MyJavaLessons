@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Assertions;
 
 import static org.junit.Assert.*;
 
-public class deleteChildTest {
+public class DeleteChildTest {
 
     /*Позитивний - проверьте, что ребенок действительно удаляется из массива children  (если передать объект, еквивалентый хотябы одному элементу массива);*/
     @Test
