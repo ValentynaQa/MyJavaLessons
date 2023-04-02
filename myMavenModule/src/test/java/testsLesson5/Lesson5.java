@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
+package testsLesson5;
 
 public class Lesson5 {
     public static void main(String[] args) {
