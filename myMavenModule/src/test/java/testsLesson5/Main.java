@@ -34,7 +34,7 @@ public class Main {
         System.out.println(petPolly);
 
         Family family2 = new Family(fatherSasha, motherHana);
-        family.addChild(childSofia);
+        family2.addChild(childSofia);
         System.out.println(family2);
 
         Family family3 = new Family(fatherSasha, motherHana);
