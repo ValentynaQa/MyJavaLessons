@@ -127,13 +127,33 @@ public class Family {
     }
 
     @Override
-    protected void finalize () {
+    protected void finalize() {
         System.out.println("УВАГА! Видалення об'єкту - " + this);
+    }
+
+    public int getChildrenNumber() {
+        return 0;
+    }
+
+    public boolean deleteChild(int i) {
+        if (i < 0 || i >= children.length) {
+            return false;
+        }
+        Human[] newChildren = new Human[children.length - 1];
+        int k = 0;
+        for (int j = 0; j < children.length; j++) {
+            if (j != i) {
+                newChildren[k++] = children[j];
+            }
+        }
+        children = newChildren;
+        return true;
     }
 
     public static class DeleteChild_intIndex_Test {
     }
 }
+
 
 
 
