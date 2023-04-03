@@ -1,7 +1,6 @@
 package testsLesson5;
 
-import testsLesson5.enums.DayOfWeek;
-import testsLesson5.enums.Speises;
+import testsLesson5.enumsHW5.Speises;
 
 public class Main {
     public static void main (String[] args) {

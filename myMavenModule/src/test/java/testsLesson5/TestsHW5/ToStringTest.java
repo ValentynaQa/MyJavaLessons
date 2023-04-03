@@ -1,8 +1,10 @@
-package testsLesson5;
+package testsLesson5.TestsHW5;
 
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
-import testsLesson5.enums.Speises;
+import testsLesson5.Human;
+import testsLesson5.Pet;
+import testsLesson5.enumsHW5.Speises;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;

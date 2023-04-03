@@ -1,7 +1,9 @@
-package testsLesson5;
+package testsLesson5.TestsHW5;
 
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
+import testsLesson5.Family;
+import testsLesson5.Human;
 
 import static org.junit.Assert.assertEquals;
 

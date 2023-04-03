@@ -1,4 +1,4 @@
-package testsLesson5.enums;
+package testsLesson5.enumsHW5;
 
 public enum Speises {
     DOG,

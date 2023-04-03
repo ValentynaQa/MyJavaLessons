@@ -1,6 +1,6 @@
 package testsLesson5;
 
-import testsLesson5.enums.Speises;
+import testsLesson5.enumsHW5.Speises;
 
 import java.util.Arrays;
 import java.util.Objects;
