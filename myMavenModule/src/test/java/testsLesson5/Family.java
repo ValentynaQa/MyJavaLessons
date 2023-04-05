@@ -1,5 +1,6 @@
 package testsLesson5;
 
+import java.util.Arrays;
 import java.util.Objects;
 
 public class Family {
@@ -91,6 +92,17 @@ public class Family {
         }
     }
 
+    /*public void addChild(Human child) {
+        if (children == null) {
+            children = new Human[] { child };
+        } else {
+            Human[] newChildren = Arrays.copyOf(children, children.length + 1);
+            newChildren[children.length] = child;
+            child.setFamily(this);
+            children = newChildren;
+        }
+    }*/
+
     public boolean deleteChild(Human child) {
         int childIndex = -1;
         for (int i = 0; i < children.length; i++) {
@@ -132,7 +144,10 @@ public class Family {
     }
 
     public int getChildrenNumber() {
-        return 0;
+        if (children == null) {
+            return 0;
+        }
+        return children.length;
     }
 
     public boolean deleteChild(int i) {
