@@ -92,17 +92,6 @@ public class Family {
         }
     }
 
-    /*public void addChild(Human child) {
-        if (children == null) {
-            children = new Human[] { child };
-        } else {
-            Human[] newChildren = Arrays.copyOf(children, children.length + 1);
-            newChildren[children.length] = child;
-            child.setFamily(this);
-            children = newChildren;
-        }
-    }*/
-
     public boolean deleteChild(Human child) {
         int childIndex = -1;
         for (int i = 0; i < children.length; i++) {
