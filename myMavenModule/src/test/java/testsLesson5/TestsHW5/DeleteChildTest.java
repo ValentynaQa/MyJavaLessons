@@ -8,7 +8,6 @@ import static org.junit.Assert.*;
 
 public class DeleteChildTest {
 
-    /*Позитивний - проверьте, что ребенок действительно удаляется из массива children  (если передать объект, еквивалентый хотябы одному элементу массива);*/
     @Test
     public void testDeleteChild() {
         Human fatherSasha = new Human("Sasha", "Gryn", 40, 90);
@@ -40,7 +39,7 @@ public class DeleteChildTest {
         Assertions.assertEquals(2, family.getChildren().length);
     }
 
-        /*Негативний - проверьте, что массив children остается без изменений (если передать объект, не еквивалентый ни одному элементу массива);*/
+        //Негативний - проверьте, что массив children остается без изменений (если передать объект, не еквивалентый ни одному элементу массива);*/
         @Test
         public void testDeleteChildNegative() {
             Human fatherNazar = new Human("Nazar", "Vasylenko", 32, new String[][]{{"З Понеділка по П'ятницю", "Робота"}, {"Субота", "Час для родини"}, {"Неділя", "Похід в кіно"}});
