@@ -79,12 +79,23 @@ public class Family {
 
     /* Методи */
     public void addChild(Human child) {
-        if (children == null) {
-            children = new ArrayList<>();
-        }
         children.add(child);
         child.setFamily(this);
     }
+    /*public boolean deleteChild(int index) {
+        if (index < 0 || index >= children.size()) { // перевірка дійсності індексу
+            return false; // повернути false, якщо індекс не дійсний
+        }
+        Human child = children.remove(index); // видалити дитину зі списку за індексом
+        if (child != null) { // перевірка, чи був видалений елемент
+            child.setFamily(null); // встановити null посилання на сім'ю для видаленої дитини
+            return true; // повернути true, якщо видалення було успішним
+        }
+        return false; // повернути false, якщо елемент не був видалений з будь-якої причини
+    }*/
+    /*public boolean deleteChild(Human child, List<Human> children) {
+        return children.remove(child);
+    }*/
 
     public boolean deleteChild(Human child) {
         if (children == null || !children.contains(child)) {
@@ -117,14 +128,14 @@ public class Family {
         return 0;
     }
 
-    public boolean deleteChild(int i) {
+    /*public boolean deleteChild(int i) {
         if (i < 0 || i >= children.size()) {
             return false;
         }
         Human child = children.remove(i);
         child.setFamily(null);
         return true;
-    }
+    }*/
 
     public static class DeleteChild_intIndex_Test {
     }

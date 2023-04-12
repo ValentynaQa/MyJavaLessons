@@ -90,5 +90,4 @@ public class DeleteChildTest {
         assertFalse(family.getChildren().contains(childMaria));
         assertEquals(1, family.getChildren().size());
     }
-
 }
