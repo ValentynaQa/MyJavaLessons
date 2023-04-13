@@ -82,7 +82,7 @@ public class Family {
         children.add(child);
         child.setFamily(this);
     }
-    /*public boolean deleteChild(int index) {
+    public boolean deleteChild(int index) {
         if (index < 0 || index >= children.size()) { // перевірка дійсності індексу
             return false; // повернути false, якщо індекс не дійсний
         }
@@ -92,10 +92,7 @@ public class Family {
             return true; // повернути true, якщо видалення було успішним
         }
         return false; // повернути false, якщо елемент не був видалений з будь-якої причини
-    }*/
-    /*public boolean deleteChild(Human child, List<Human> children) {
-        return children.remove(child);
-    }*/
+    }
 
     public boolean deleteChild(Human child) {
         if (children == null || !children.contains(child)) {
