@@ -1,7 +1,6 @@
-package HW7;
+package HW_8;
 
-import java.util.Arrays;
-import java.util.*;
+import java.util.Map;
 
 
 public class Human {
@@ -14,7 +13,7 @@ public class Human {
     private Map<String, String> schedule;
     private Family family;
 
-
+    
     @Override
     public String toString() {
         String scheduleStr = (schedule != null) ? schedule.toString() : "No schedule";
