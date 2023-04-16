@@ -5,7 +5,6 @@ import java.util.List;
 
 public class CollectionFamilyDao implements FamilyDao {
 
-
     // реалізація методу getAllFamilies:
     private List<Family> familyList = new ArrayList<>();
     @Override
@@ -85,4 +84,13 @@ public class CollectionFamilyDao implements FamilyDao {
         }
         return result;
     }
+
+    // реалізація методу countFamiliesWithMemberNumber - подсчитать число семей с количеством людей равное переданному числу.
+    @Override
+    public int countFamiliesWithMemberNumber(int number) {
+        return (int) familyList.stream().filter(family -> family.countFamily() == number).count();
+    }
+
+    // реалізація методу createNewFamily - создать новую семью (принимает 2 параметра типа Human) - создает новую семью, сохраняет в БД.
+
 }

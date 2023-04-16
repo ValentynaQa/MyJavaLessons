@@ -27,4 +27,10 @@ public interface FamilyDao {
 
 
     List<Family> getFamiliesLessThan(int count);
+
+
+    // реалізація методу countFamiliesWithMemberNumber - подсчитать число семей с количеством людей равное переданному числу.
+    int countFamiliesWithMemberNumber(int number);
+
+
 }

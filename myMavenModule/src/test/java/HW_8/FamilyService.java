@@ -35,4 +35,13 @@ public class FamilyService {
         }
     }
 
+    public int countFamiliesWithMemberNumber(int number) {
+        return familyDao.countFamiliesWithMemberNumber(number);
+    } //  подсчитать число семей с количеством людей равное переданному числу.
+
+    public void createNewFamily(Human father, Human mother) {
+        Family family = new Family(father, mother);
+        familyDao.saveFamily(family);
+    }   // создать новую семью (принимает 2 параметра типа Human) - создает новую семью, сохраняет в БД.
+
 }
