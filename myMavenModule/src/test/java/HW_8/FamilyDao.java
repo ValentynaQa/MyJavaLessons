@@ -33,4 +33,5 @@ public interface FamilyDao {
     int countFamiliesWithMemberNumber(int number);
 
 
+
 }

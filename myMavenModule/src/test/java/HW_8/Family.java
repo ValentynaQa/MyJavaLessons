@@ -3,6 +3,7 @@ package HW_8;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 public class Family { /*тут не впевнена */
     private Human mother;
@@ -124,6 +125,11 @@ public class Family { /*тут не впевнена */
     public int getChildrenNumber() {
         return 0;
     }
+
+    public void setPets(List<Pet> pets) {
+        this.pet = pet;
+    }
+
 
     /*public boolean deleteChild(int i) {
         if (i < 0 || i >= children.size()) {
