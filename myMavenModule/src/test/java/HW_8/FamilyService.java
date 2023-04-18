@@ -21,12 +21,13 @@ public class FamilyService {
             System.out.println(families.get(i));
         }
     }
-    public void getFamiliesBiggerThan(int count) {  //виводить всі сім'ї, де кількість членів сім'ї більше вказаної кількості count.
+    public List<Family> getFamiliesBiggerThan(int count) {  //виводить всі сім'ї, де кількість членів сім'ї більше вказаної кількості count.
         List<Family> families = familyDao.getFamiliesBiggerThan(count);
         for (int i = 0; i < families.size(); i++) {
             System.out.println("Сім'я під номером " + i);
             System.out.println(families.get(i));
         }
+        return families;
     }
     public void getFamiliesLessThan(int count) {  //виводить всі сім'ї, де кількість членів сім'ї менше вказаної кількості count.
         List<Family> families = familyDao.getFamiliesLessThan(count);
@@ -126,5 +127,11 @@ public class FamilyService {
         Set<Pet> pets = new HashSet<>((Collection) family.getPet());
         pets.add(pet);
         familyDao.saveFamily(family);
+    }
+
+    public void deleteAllFamilies() {
+    }
+
+    public void createNewFamily(Family family3) {
     }
 }

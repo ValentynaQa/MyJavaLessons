@@ -11,6 +11,7 @@ public class Family { /*тут не впевнена */
     private List<Human> children;
     private Pet pet;
 
+
     /* геттери*/
     public Human getMother() {
         return mother;
