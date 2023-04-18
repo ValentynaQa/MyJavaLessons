@@ -14,6 +14,9 @@ public interface FamilyDao {
     Family getFamilByIndex(int index);
 
 
+    // реалізація методу  getFamilyByIndex
+    Family getFamilyByIndex(int index);
+
     boolean deleteFamily(int index);
 
 
@@ -31,7 +34,5 @@ public interface FamilyDao {
 
     // реалізація методу countFamiliesWithMemberNumber - подсчитать число семей с количеством людей равное переданному числу.
     int countFamiliesWithMemberNumber(int number);
-
-
 
 }

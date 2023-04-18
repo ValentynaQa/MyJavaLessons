@@ -16,9 +16,14 @@ public class CollectionFamilyDao implements FamilyDao {
         return families;
     }
 
+    @Override
+    public Family getFamilByIndex(int index) {
+        return null;
+    }
+
     // реалізація методу  getFamilyByIndex
     @Override
-    public Family getFamilByIndex (int index) {
+    public Family getFamilyByIndex(int index) {
         if (index >= 0 && index < familyList.size()) {
             return familyList.get(index);
         } else {
@@ -88,9 +93,12 @@ public class CollectionFamilyDao implements FamilyDao {
     // реалізація методу countFamiliesWithMemberNumber - подсчитать число семей с количеством людей равное переданному числу.
     @Override
     public int countFamiliesWithMemberNumber(int number) {
-        return (int) familyList.stream().filter(family -> family.countFamily() == number).count();
+        int count = 0;
+        for (Family family : familyList) {
+            if (family.countFamily() == number) {
+                count++;
+            }
+        }
+        return count;
     }
-
-    // реалізація методу createNewFamily - создать новую семью (принимает 2 параметра типа Human) - создает новую семью, сохраняет в БД.
-
 }

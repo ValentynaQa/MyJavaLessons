@@ -15,12 +15,13 @@ public class Lesson5 {
         familyController.getFamiliesBiggerThan(2);
         familyController.getFamiliesLessThan(4);
         int count = familyController.countFamiliesWithMemberNumber(3);
-        System.out.print("Количество семей с количеством членов: " + count);
+        System.out.print("Кількість сімей зі значенням кількості членів сім'ї: " + count + " ");
 
         HW_8.Human fatherN = new HW_8.Human("Nazar", "Vasylenko", 32, Map.of("З Понеділка по П'ятницю", "Робота", "Субота", "Час для родини", "Неділя", "Похід в кіно").size());
         HW_8.Human motherV = new HW_8.Human("Valentyna", "Vasylenko", 28, 85);
+        HW_8.Human childS = new HW_8.Human("Sosia", "Gryn", 5, Map.of("Вівторок", "Похід до лікаря").size());
 
-        familyController.createNewFamily(fatherN, motherV);
+        familyController.createNewFamily(fatherN, motherV, childS);
         familyController.deleteFamilyByIndex(0);
 
         Family family = new Family(fatherN, motherV);
@@ -31,12 +32,14 @@ public class Lesson5 {
         familyController.deleteAllChildrenOlderThen(10);
         int totalFamilies = familyController.count();
 
-        System.out.println("Всего семей: " + totalFamilies);
+        System.out.println("Загалом є: " + totalFamilies + " сімей");
         Family firstFamily = familyController.getFamilyById(1);
 
-        System.out.println("Первая семья: " + firstFamily.toString());
-
-
+        if (firstFamily != null) {
+            System.out.println("Перша сім'я: " + firstFamily.toString());
+        } else {
+            System.out.println("Перша сім'я відсутня.");
+        }
 
         int number = 0;
         testsLesson5.Human[] humans = new testsLesson5.Human[1000000];

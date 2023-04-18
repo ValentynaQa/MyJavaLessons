@@ -30,7 +30,7 @@ public class FamilyController {
         return familyService.countFamiliesWithMemberNumber(number);
     }
 
-    public void createNewFamily(Human father, Human mother) {
+    public void createNewFamily(Human father, Human mother, Human childS) {
         familyService.createNewFamily(father, mother);
     }
 

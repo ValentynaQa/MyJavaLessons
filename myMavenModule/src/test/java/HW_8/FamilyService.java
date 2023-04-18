@@ -6,8 +6,8 @@ import java.util.*;
 public class FamilyService {
     private FamilyDao familyDao;
 
-    public FamilyService() { //конструктор
-        this.familyDao = familyDao;
+    public FamilyService() {
+        this.familyDao = new CollectionFamilyDao();
     }
 
     public List<Family> getAllFamilies() { // получить список всех семей.
@@ -59,19 +59,23 @@ public class FamilyService {
         }
     }
 
-    public Family bornChild (Family family, String boyName, String girlName){
-        Random random = new Random();
-        int rand = random.nextInt(2);
-
+    public Family bornChild(Family family, String boyName, String girlName) {
         String childName;
         String childSurname = family.getFather().getSurname();
 
-        if (rand == 0) {  //хлопчаче ім,я
+        Random random = new Random();
+        int rand = random.nextInt(2);
+
+        if (rand == 0) {
             childName = boyName;
             System.out.println("Народився хлопчик. Його звати " + boyName);
-        } else { // дівчаче ім,я
+        } else {
             childName = girlName;
             System.out.println("Народилась дівчинка. Її звати " + girlName);
+        }
+
+        if (family.getChildren() == null) {
+            family.setChildren(new ArrayList<>());
         }
 
         Human child = new Human(childName, childSurname, 0, 0);
