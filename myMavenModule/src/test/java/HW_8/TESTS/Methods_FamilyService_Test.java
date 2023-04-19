@@ -1,11 +1,8 @@
 package HW_8.TESTS;
 
 import HW_8.*;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -28,10 +25,8 @@ public class Methods_FamilyService_Test {
         Family family2 = new Family(motherAlla, fatherNikola);
         familyService.createNewFamily(motherAlla, fatherNikola);
 
-        // Отримуємо список всіх сімей з БД
         List<Family> families = familyService.getAllFamilies();
 
-        // Перевіряємо, чи список містить обидві збережені сім'ї
         assertTrue(families.contains(family1));
         assertTrue(families.contains(family2));
     }
@@ -40,13 +35,9 @@ public class Methods_FamilyService_Test {
     public void testGetAllFamiliesNegative() {
         FamilyService familyService = new FamilyService();
 
-        // Видаляємо всі сім'ї з БД
         familyService.deleteAllFamilies();
-
-        // Отримуємо список всіх сімей з БД
         List<Family> families = familyService.getAllFamilies();
 
-        // Перевіряємо, що список порожній
         assertTrue(families.isEmpty());
     }
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -58,10 +49,8 @@ public class Methods_FamilyService_Test {
         Human mother = new Human("Nadiia", "Frolova", 35, 99);
         FamilyService familyService = new FamilyService();
 
-        // Виклик методу, який ми хочемо протестувати
         familyService.createNewFamily(mother, father);
 
-        // Перевірка того, що метод виконався коректно і сім'я збережена в БД
         List<Family> families = familyService.getAllFamilies();
         assertEquals(1, families.size());
         Family family = families.get(0);
@@ -72,22 +61,19 @@ public class Methods_FamilyService_Test {
     @Test
     public void testCreateNewFamilyNegative() {
         Human father = new Human("Ivan", "Frolov", 36, 89);
-        Human mother = null; // намерено передаємо null замість матері
+        Human mother = null;
         FamilyService familyService = new FamilyService();
 
-        // Виклик методу, який ми хочемо протестувати
         familyService.createNewFamily(father, mother);
 
-// Перевірка того, що метод НЕ виконався коректно і сім'я НЕ збережена в БД
         List<Family> families = familyService.getAllFamilies();
-        assertTrue(1 == families.size()); // сім'я не повинна бути збережена
+        assertTrue(1 == families.size());
     }
 
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     @Test
     public void testDeleteFamilyByIndex() {
-        // Створюємо тестову сім'ю
         Human father = new Human("Ivan", "Frolov", 36, 89);
         Human mother = new Human("Nadiia", "Frolova", 35, 99);
         FamilyService familyService = new FamilyService();
@@ -100,6 +86,5 @@ public class Methods_FamilyService_Test {
         assertFalse(families.contains(new Family(father, mother)));
     }
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
 
 }
