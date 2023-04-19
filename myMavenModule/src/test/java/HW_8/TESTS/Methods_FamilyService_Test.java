@@ -1,11 +1,11 @@
 package HW_8.TESTS;
 
-import HW_8.Family;
-import HW_8.FamilyService;
-import HW_8.Human;
+import HW_8.*;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -54,8 +54,8 @@ public class Methods_FamilyService_Test {
 
     @Test
     public void testCreateNewFamilyPositive() {
-        Human father = new Human("John", "Doe", 36, 89);
-        Human mother = new Human("Jane", "Doe", 35, 99);
+        Human father = new Human("Ivan", "Frolov", 36, 89);
+        Human mother = new Human("Nadiia", "Frolova", 35, 99);
         FamilyService familyService = new FamilyService();
 
         // Виклик методу, який ми хочемо протестувати
@@ -71,7 +71,7 @@ public class Methods_FamilyService_Test {
 
     @Test
     public void testCreateNewFamilyNegative() {
-        Human father = new Human("John", "Doe", 36, 89);
+        Human father = new Human("Ivan", "Frolov", 36, 89);
         Human mother = null; // намерено передаємо null замість матері
         FamilyService familyService = new FamilyService();
 
@@ -82,5 +82,24 @@ public class Methods_FamilyService_Test {
         List<Family> families = familyService.getAllFamilies();
         assertTrue(1 == families.size()); // сім'я не повинна бути збережена
     }
+
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    @Test
+    public void testDeleteFamilyByIndex() {
+        // Створюємо тестову сім'ю
+        Human father = new Human("Ivan", "Frolov", 36, 89);
+        Human mother = new Human("Nadiia", "Frolova", 35, 99);
+        FamilyService familyService = new FamilyService();
+        familyService.createNewFamily(father, mother);
+
+        int index = 0;
+        familyService.deleteFamilyByIndex(index);
+
+        List<Family> families = familyService.getAllFamilies();
+        assertFalse(families.contains(new Family(father, mother)));
+    }
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 
 }

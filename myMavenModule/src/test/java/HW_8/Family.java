@@ -58,9 +58,11 @@ public class Family { /*тут не впевнена */
     }
 
     /* Конструктор */
+
     public Family(Human mother, Human father) {
         this.mother = mother;
         this.father = father;
+        this.children = new ArrayList<>();
     }
 
     public Family(Human mother, Human father, List<Human> children) {
