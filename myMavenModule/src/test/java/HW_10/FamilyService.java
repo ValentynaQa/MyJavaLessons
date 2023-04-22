@@ -135,4 +135,8 @@ public class FamilyService {
 
     public void createNewFamily(Family family3) {
     }
+
+    public FamilyService(FamilyDao familyDao) {
+        this.familyDao = familyDao;
+    }
 }

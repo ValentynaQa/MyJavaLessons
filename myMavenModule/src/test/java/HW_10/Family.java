@@ -1,5 +1,7 @@
 package HW_10;
 
+import HW6.Man;
+import HW6.Woman;
 import HW_8.Pet;
 
 import java.util.ArrayList;
@@ -79,7 +81,7 @@ public class Family { /*тут не впевнена */
         this.pet = pet;
     }
 
-    public Family() {
+    public Family(Woman mother, Man father) {
     }
 
     /* Методи */
